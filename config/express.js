@@ -15,7 +15,10 @@ module.exports = function() {
       extended: true
     })
   );
+
   require("../services/routes/users.routes")(app);
   app.use(bodyParser.json());
+  app.set("views", "./services/views");
+  app.set("view engine", "ejs");
   return app;
 };
